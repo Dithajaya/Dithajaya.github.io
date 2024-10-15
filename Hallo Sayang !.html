@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://127.0.0.1:5500/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Hallo Sayang !_files/style.css">
+    <title>Hallo Sayang !</title>
+  </head>
+  <body>
+    <div class="card bg-love">
+      <img id="thumb" src="./Hallo Sayang !_files/image.png" alt="thumb" class="img-thumb">
+      <h1 class="latin text-center">Hai Syaira</h1>
+      <h2 class="text-center">Kamu sayang aku gak ?</h2>
+      <div class="card-footer">
+        <div class="btn mau" onclick="mau()">Sayang 😍</div>
+        <div class="btn gak" onclick="gakmau(this)" onmouseover="gakmau(this)">
+          ko engga ☹️
+        </div>
+      </div>
+      <div class="info text-center mt-16" id="info"></div>
+      <div class="water-mark text-center">
+        <a href="https://wa.me/qr/DQJBZDJXU4CDK1">© Dithaa punya</a>
+      </div>
+    </div>
+    <div class="text-center mt-16" id="musicbox">
+      <audio id="music" src="music.mp3" controls=""></audio>
+    </div>
+  <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+  <script>
+    var _info = document.getElementById("info");
+    var _music = document.getElementById("music");
+    function gakmau(element) {
+      element.style.position = "absolute";
+      element.style.left = `${Math.floor(Math.random() * 90)}%`;
+      element.style.top = `${Math.floor(Math.random() * 90)}%`;
+
+      _info.innerHTML = "Parah sih kalau engga 🙄";
+    }
+    function mau() {
+      if (_music.paused) _music.play();
+      _info.innerHTML = "Makasih Sayang😍 . Lagu ini buat kamu.";
+    }
+  </script>
+
+</body></html>
